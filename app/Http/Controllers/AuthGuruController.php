@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\User;
+use App\User;
 use Illuminate\Http\Request;
 
 class AuthGuruController extends Controller

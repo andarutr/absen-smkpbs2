@@ -16,7 +16,7 @@ trait GuardsAttributes
     /**
      * The attributes that aren't mass assignable.
      *
-     * @var array|bool
+     * @var array
      */
     protected $guarded = ['*'];
 
@@ -77,9 +77,7 @@ trait GuardsAttributes
      */
     public function getGuarded()
     {
-        return $this->guarded === false
-                    ? []
-                    : $this->guarded;
+        return $this->guarded;
     }
 
     /**

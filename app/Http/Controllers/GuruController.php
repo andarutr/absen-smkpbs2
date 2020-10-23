@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Absensi;
+use App\Absensi;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller

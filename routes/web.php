@@ -1,11 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AbsensiController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AuthGuruController;
-use App\Http\Controllers\GuruController;
-use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,39 +17,39 @@ Route::get('/', function()
 {
 	return redirect('https://smkpbs2-jkt.sch.id');
 });
-Route::get('/list-absensi', [AbsensiController::class, 'list_absensi']);
-Route::get('/{username}', [AbsensiController::class, 'index']);
-Route::post('/absensi/{username}', [AbsensiController::class, 'absensi']);
-Route::get('/login/admin', [AuthController::class, 'login'])->name('login');
-Route::post('/admin', [AuthController::class, 'postLogin']);
-Route::get('/login/guru', [AuthGuruController::class, 'login']);
-Route::post('/guru', [AuthGuruController::class, 'postLogin']);
+Route::get('/list-absensi', 'AbsensiController@list_absensi');
+Route::get('/{username}', 'AbsensiController@index');
+Route::post('/absensi/{username}', 'AbsensiController@absensi');
+Route::get('/login/admin', 'AuthController@login')->name('login');
+Route::post('/admin', 'AuthController@postLogin');
+Route::get('/login/guru', 'AuthGuruController@login');
+Route::post('/guru', 'AuthGuruController@postLogin');
 
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/guru'], function(){
-		Route::get('/dashboard', [GuruController::class, 'dashboard']);
-		Route::get('/kelas/{kelas}/{jurusan}/{pelajaran}', [GuruController::class, 'showAbsenPelajaran']);
-		Route::get('/cari/{kelas}/{jurusan}/{pelajaran}', [GuruController::class, 'search']);
-		Route::get('/wali-kelas/{kelas}/{jurusan}', [GuruController::class, 'WaliKelas']);
-		Route::get('/cari/{kelas}/{jurusan}', [GuruController::class, 'searchAbsenKelas']);
-		Route::get('/preview/{kelas}/{jurusan}', [GuruController::class, 'previewAbsenWalas']);
-		Route::get('/preview/{kelas}/{jurusan}/{pelajaran}', [GuruController::class, 'previewAbsen']);
-		Route::get('/download/absen/{kelas}/{jurusan}', [GuruController::class, 'downloadDataAbsenWalas']);
-		Route::get('/download/absen/{kelas}/{jurusan}/{pelajaran}', [GuruController::class, 'downloadDataAbsen']);
-		Route::get('/logout', [AuthGuruController::class, 'logout']);
+		Route::get('/dashboard', 'GuruController@dashboard');
+		Route::get('/kelas/{kelas}/{jurusan}/{pelajaran}', 'GuruController@showAbsenPelajaran');
+		Route::get('/cari/{kelas}/{jurusan}/{pelajaran}', 'GuruController@search');
+		Route::get('/wali-kelas/{kelas}/{jurusan}', 'GuruController@WaliKelas');
+		Route::get('/cari/{kelas}/{jurusan}', 'GuruController@searchAbsenKelas');
+		Route::get('/preview/{kelas}/{jurusan}', 'GuruController@previewAbsenWalas');
+		Route::get('/preview/{kelas}/{jurusan}/{pelajaran}', 'GuruController@previewAbsen');
+		Route::get('/download/absen/{kelas}/{jurusan}', 'GuruController@downloadDataAbsenWalas');
+		Route::get('/download/absen/{kelas}/{jurusan}/{pelajaran}', 'GuruController@downloadDataAbsen');
+		Route::get('/logout', 'AuthGuruController@logout');
 	});
 });
 
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/admin'], function(){
-		Route::get('/dashboard', [AdminController::class, 'dashboard']);
-		Route::get('/data-guru', [AdminController::class, 'data_guru']);
-		Route::get('/store-data', [AdminController::class, 'storeData']);
-		Route::get('/kelas/{kelas}/{jurusan}', [AdminController::class, 'showAbsen']);
-		Route::get('/cari/{kelas}/{jurusan}', [AdminController::class, 'search']);
-		Route::get('/preview/{kelas}/{jurusan}', [AdminController::class, 'previewAbsen']);
-		Route::get('/download/absen', [AdminController::class, 'downloadAbsen']);
-		Route::get('/download/absen/{kelas}/{jurusan}', [AdminController::class, 'downloadDataAbsen']);
-		Route::get('/logout', [AuthController::class, 'logout']);
+		Route::get('/dashboard', 'AdminController@dashboard');
+		Route::get('/data-guru', 'AdminController@data_guru');
+		Route::get('/store-data', 'AdminController@storeData');
+		Route::get('/kelas/{kelas}/{jurusan}', 'AdminController@showAbsen');
+		Route::get('/cari/{kelas}/{jurusan}', 'AdminController@search');
+		Route::get('/preview/{kelas}/{jurusan}', 'AdminController@previewAbsen');
+		Route::get('/download/absen', 'AdminController@downloadAbsen');
+		Route::get('/download/absen/{kelas}/{jurusan}', 'AdminController@downloadDataAbsen');
+		Route::get('/logout', 'AuthController@logout');
 	});
 });

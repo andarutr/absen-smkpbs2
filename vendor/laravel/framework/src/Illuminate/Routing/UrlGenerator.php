@@ -311,7 +311,7 @@ class UrlGenerator implements UrlGeneratorContract
      * Create a signed route URL for a named route.
      *
      * @param  string  $name
-     * @param  array  $parameters
+     * @param  mixed  $parameters
      * @param  \DateTimeInterface|\DateInterval|int|null  $expiration
      * @param  bool  $absolute
      * @return string
@@ -366,17 +366,6 @@ class UrlGenerator implements UrlGeneratorContract
     {
         return $this->hasCorrectSignature($request, $absolute)
             && $this->signatureHasNotExpired($request);
-    }
-
-    /**
-     * Determine if the given request has a valid signature for a relative URL.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return bool
-     */
-    public function hasValidRelativeSignature(Request $request)
-    {
-        return $this->hasValidSignature($request, false);
     }
 
     /**

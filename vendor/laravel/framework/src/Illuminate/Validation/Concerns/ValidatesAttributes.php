@@ -14,6 +14,7 @@ use Egulias\EmailValidator\Validation\SpoofCheckValidation;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Exists;
@@ -184,9 +185,19 @@ trait ValidatesAttributes
      */
     protected function getDateTimestamp($value)
     {
-        $date = is_null($value) ? null : $this->getDateTime($value);
+        if ($value instanceof DateTimeInterface) {
+            return $value->getTimestamp();
+        }
 
-        return $date ? $date->getTimestamp() : null;
+        if ($this->isTestingRelativeDateTime($value)) {
+            $date = $this->getDateTime($value);
+
+            if (! is_null($date)) {
+                return $date->getTimestamp();
+            }
+        }
+
+        return strtotime($value);
     }
 
     /**
@@ -234,10 +245,27 @@ trait ValidatesAttributes
     protected function getDateTime($value)
     {
         try {
-            return Date::parse($value);
+            if ($this->isTestingRelativeDateTime($value)) {
+                return Date::parse($value);
+            }
+
+            return date_create($value) ?: null;
         } catch (Exception $e) {
             //
         }
+    }
+
+    /**
+     * Check if the given value should be adjusted to Carbon::getTestNow().
+     *
+     * @param  mixed  $value
+     * @return bool
+     */
+    protected function isTestingRelativeDateTime($value)
+    {
+        return Carbon::hasTestNow() && is_string($value) && (
+            $value === 'now' || Carbon::hasRelativeKeywords($value)
+        );
     }
 
     /**
@@ -1470,8 +1498,6 @@ trait ValidatesAttributes
 
         if (is_bool($other)) {
             $values = $this->convertValuesToBoolean($values);
-        } elseif (is_null($other)) {
-            $values = $this->convertValuesToNull($values);
         }
 
         return [$values, $other];
@@ -1493,19 +1519,6 @@ trait ValidatesAttributes
             }
 
             return $value;
-        }, $values);
-    }
-
-    /**
-     * Convert the given values to null if they are string "null".
-     *
-     * @param  array  $values
-     * @return array
-     */
-    protected function convertValuesToNull($values)
-    {
-        return array_map(function ($value) {
-            return Str::lower($value) === 'null' ? null : $value;
         }, $values);
     }
 

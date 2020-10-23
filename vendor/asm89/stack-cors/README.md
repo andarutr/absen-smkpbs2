@@ -6,7 +6,7 @@ http-{foundation,kernel} using application. It attempts to implement the
 
 [W3C Recommendation]: http://www.w3.org/TR/cors/
 
-Build status: ![.github/workflows/run-tests.yml](https://github.com/asm89/stack-cors/workflows/.github/workflows/run-tests.yml/badge.svg)
+Master [![Build Status](https://secure.travis-ci.org/asm89/stack-cors.png?branch=master)](http://travis-ci.org/asm89/stack-cors)
 
 ## Installation
 
@@ -46,7 +46,7 @@ use Asm89\Stack\CorsService;
 $cors = new CorsService(array(
     'allowedHeaders'         => array('x-allowed-header', 'x-other-allowed-header'),
     'allowedMethods'         => array('DELETE', 'GET', 'POST', 'PUT'),
-    'allowedOrigins'         => array('http://localhost'),
+    'allowedOrigins'         => array('localhost'),
     'allowedOriginsPatterns' => array('/localhost:\d/'),
     'exposedHeaders'         => false,
     'maxAge'                 => false,

@@ -265,19 +265,13 @@ class Router implements BindingRegistrar, RegistrarContract
      * @param  string  $uri
      * @param  string  $view
      * @param  array  $data
-     * @param  int|array  $status
-     * @param  array  $headers
      * @return \Illuminate\Routing\Route
      */
-    public function view($uri, $view, $data = [], $status = 200, array $headers = [])
+    public function view($uri, $view, $data = [])
     {
         return $this->match(['GET', 'HEAD'], $uri, '\Illuminate\Routing\ViewController')
-                ->setDefaults([
-                    'view' => $view,
-                    'data' => $data,
-                    'status' => is_array($status) ? 200 : $status,
-                    'headers' => is_array($status) ? $status : $headers,
-                ]);
+                ->defaults('view', $view)
+                ->defaults('data', $data);
     }
 
     /**

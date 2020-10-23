@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use PDF;
 use Carbon\Carbon;
-use App\Models\User;
-use App\Models\Absensi;
+use App\User;
+use App\Absensi;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
