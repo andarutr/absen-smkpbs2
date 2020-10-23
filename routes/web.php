@@ -43,13 +43,28 @@ Route::middleware('auth')->group(function(){
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/admin'], function(){
 		Route::get('/dashboard', 'AdminController@dashboard');
+		Route::get('/store-data', 'AdminController@storeData');
 		Route::get('/data-guru', 'AdminController@data_guru');
 		Route::get('/store-data', 'AdminController@storeData');
 		Route::get('/kelas/{kelas}/{jurusan}', 'AdminController@showAbsen');
 		Route::get('/cari/{kelas}/{jurusan}', 'AdminController@search');
 		Route::get('/preview/{kelas}/{jurusan}', 'AdminController@previewAbsen');
-		Route::get('/download/absen', 'AdminController@downloadAbsen');
-		Route::get('/download/absen/{kelas}/{jurusan}', 'AdminController@downloadDataAbsen');
+		Route::get('/download/absen', 'DownloadController@downloadAbsen');
+		Route::get('/download/absen/x/animasi', 'DownloadController@XAnimasi');
+		Route::get('/download/absen/xi/animasi', 'DownloadController@XIAnimasi');
+		Route::get('/download/absen/xii/animasi', 'DownloadController@XIIAnimasi');
+		Route::get('/download/absen/x/akuntansi', 'DownloadController@XAkuntansi');
+		Route::get('/download/absen/xi/akuntansi', 'DownloadController@XIAkuntansi');
+		Route::get('/download/absen/xii/akuntansi', 'DownloadController@XIIAkuntansi');
+		Route::get('/download/absen/x/perbankan-syariah', 'DownloadController@XPerbankanSyariah');
+		Route::get('/download/absen/xi/perbankan-syariah', 'DownloadController@XIPerbankanSyariah');
+		Route::get('/download/absen/xii/perbankan-syariah', 'DownloadController@XIIPerbankanSyariah');
+		Route::get('/download/absen/x/otkp-1', 'DownloadController@XOTKPSatu');
+		Route::get('/download/absen/xi/otkp-1', 'DownloadController@XIOTKPSatu');
+		Route::get('/download/absen/xii/otkp-1', 'DownloadController@XIIOTKPSatu');
+		Route::get('/download/absen/x/otkp-2', 'DownloadController@XOTKPDua');
+		Route::get('/download/absen/xi/otkp-2', 'DownloadController@XIOTKPDua');
+		Route::get('/download/absen/xii/otkp-2', 'DownloadController@XIIOTKPDua');
 		Route::get('/logout', 'AuthController@logout');
 	});
 });

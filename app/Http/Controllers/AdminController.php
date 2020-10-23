@@ -82,23 +82,4 @@ class AdminController extends Controller
 
       return view('admin.preview', compact('absensi','kelas','jurusan'));
   }
-
-  public function downloadAbsen()
-  {
-      $menu = 'Download';
-      $waktu = Carbon::now()->locale('id')->isoFormat('LL');
-
-      return view('admin.download', compact('menu','waktu'));
-  }
-
-  public function downloadDataAbsen($kelas, $jurusan)
-  {
-      $kelas = $kelas;
-      $jurusan = $jurusan;
-
-      $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan])->get();
-      $download = PDF::loadView('absen.datapdf_admin', compact('kelas','jurusan','absensi'));
-
-      return $download->download("absen $kelas $jurusan.pdf");
-  }
 }
