@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="icon" type="image/png" href="/img/pbs2.png"/>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Login Guru</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-  <!-- CSS Libraries -->
-  <link rel="stylesheet" href="/node_modules/bootstrap-social/bootstrap-social.css">
-
   <!-- Template CSS -->
-  <link rel="stylesheet" href="/css/style2.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/components.css">
 </head>
 
 <body>
-@if(session('message'))
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script>
-Swal.fire(
-  'Gagal Login',
-  '{{ session("message") }}',
-  'error'
-)
-</script>
-@endif
-@if(session('logout'))
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script>
-Swal.fire(
-  'Logout',
-  '{{ session("logout") }}',
-  'success'
-)
-</script>
-@endif
-
+  @if(session('message'))
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script>
+  Swal.fire(
+    'Gagal Login',
+    '{{ session("message") }}',
+    'error'
+  )
+  </script>
+  @endif
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -58,7 +42,7 @@ Swal.fire(
                 @csrf
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input id="username" type="text" class="form-control" name="username" placeholder="Masukkan NRP">
+                    <input id="username" type="text" class="form-control" name="username">
                     <p style="color: red;">@error('username'){{ $message }}@enderror</p>
                   </div>
 
@@ -66,7 +50,7 @@ Swal.fire(
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan Password">
+                    <input id="password" type="password" class="form-control" name="password">
                     <p style="color: red;">@error('password'){{ $message }}@enderror</p>
                   </div>
 
@@ -95,8 +79,8 @@ Swal.fire(
   <!-- JS Libraies -->
 
   <!-- Template JS File -->
-  <script src="/js/scripts.js"></script>
-  <script src="/js/custom.js"></script>
+  <script src="../assets/js/scripts.js"></script>
+  <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
 </body>
