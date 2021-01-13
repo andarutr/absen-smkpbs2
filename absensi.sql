@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2020 at 12:19 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Jan 12, 2021 at 04:36 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -81,6 +81,55 @@ INSERT INTO `kelas` (`id`, `kelas`) VALUES
 (1, 'X'),
 (2, 'XI'),
 (3, 'XII');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list_absensi`
+--
+
+CREATE TABLE `list_absensi` (
+  `id` int(11) NOT NULL,
+  `nama_guru` varchar(50) NOT NULL,
+  `nrp` varchar(6) NOT NULL,
+  `link` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `list_absensi`
+--
+
+INSERT INTO `list_absensi` (`id`, `nama_guru`, `nrp`, `link`) VALUES
+(1, 'Dra. Hj. Tati Mulyanih	', '060851', '060851'),
+(2, 'Dra. Mas Mimin, M.M	', '910311', '910311'),
+(3, 'Bambang Ismayanto, M.Pd	', '030750', '030750'),
+(4, 'Halimah, S.Pd	', '151175', '151175'),
+(5, 'Indah Hoirunnisah, S.Si	', '171293', '171293'),
+(6, 'Rini Permatasari, S.Pd	', '171294', '171294'),
+(7, 'Ahyar Hailani, S.Sn	', '191352', '191352'),
+(8, 'Rokhmatunnisa Febrian, S.Pd	', '191382', '191382'),
+(9, 'Dinar Sarah, S.E	', '191386', '191386'),
+(10, 'Rahmawati, S.Pd	', '201394', '201394'),
+(11, 'Kurnia Wiyanti, S.Pd	', '201416', '201416'),
+(12, 'Fisi Liana Aziza, S.Pd	', '201417', '201417'),
+(13, 'Fajar Alkan Joesuli, A.Md	', '201419', '201419'),
+(14, 'Dra. Hj. Ikah Atikah, M.M	', '870211', '870211'),
+(15, 'Sri Susilaningsih, SE, M.M	', '060850', '060850'),
+(16, 'Aris Setiawan, S.Pd	', '100998', '100998'),
+(17, 'Sudarsono, S.Pd	', '880234', '880234'),
+(18, 'Dra. Siti Murtasilatun, M.M	', '980543', '980543'),
+(19, 'Dartim, S.Pd	', '020725', '020725'),
+(20, 'Novi Mardalini, SE	', '030751', '030751'),
+(21, 'Suhari, S.Pd	', '080937', '080937'),
+(22, 'Jebel Firdaus, S.EI	', '080947', '080947'),
+(23, 'Dwi Setyo Rini, S.Pd	', '100994', '100994'),
+(24, 'Ana Fitrianingtias, S.Pd	', '101002', '101002'),
+(25, 'Lulut Andri Iswari, S.Pd	', '101004', '101004'),
+(26, 'Ihsan Mustaqim, S.Pd	', '161209', '161209'),
+(27, 'Zaenuddin Fahri, S.Pd.I	', '161210', '161210'),
+(28, 'Faidhatul Atiyah, S.Pd	', '201414', '201414'),
+(29, 'Vira Awalitawati Siregar, S.Pd	', '201415', '201415'),
+(30, 'Arif Nur Rachman, S.Pd	', '201418', '201418');
 
 -- --------------------------------------------------------
 
@@ -262,7 +311,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `login_date`) VALUES
-(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Jumat, 13 November 2020 pukul 04.32'),
+(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Senin, 11 Januari 2021 pukul 13.53'),
 (2, 'Dra. Hj. Tati Mulyanih', '060851', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 09.42'),
 (3, 'Dra. Mas Mimin, M.M', '910311', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 12.52'),
 (4, 'Bambang Ismayanto, M.Pd', '030750', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 6 November 2020 pukul 11.35'),
@@ -317,6 +366,12 @@ ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `list_absensi`
+--
+ALTER TABLE `list_absensi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
@@ -355,6 +410,12 @@ ALTER TABLE `jurusan`
 --
 ALTER TABLE `kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `list_absensi`
+--
+ALTER TABLE `list_absensi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`

@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function()
-{
-	return redirect('https://smkpbs2-jkt.sch.id');
-});
+Route::get('/', 'AbsensiController@list_absensi');
 Route::get('/list-absensi', 'AbsensiController@list_absensi');
 Route::get('/{username}', 'AbsensiController@index');
 Route::post('/absensi/{username}', 'AbsensiController@absensi');

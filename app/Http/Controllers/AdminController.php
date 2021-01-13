@@ -13,7 +13,7 @@ class AdminController extends Controller
   public function dashboard()
   {
       $menu = 'Dashboard';
-      $absensi = Absensi::withTrashed()->orderBy('id','desc')->paginate(25);
+      $absensi = Absensi::withTrashed()->orderBy('id','desc')->simplePaginate(10);
       $animasi = Absensi::where('jurusan', 'Animasi')->count();
       $akuntansi = Absensi::where('jurusan', 'Akuntansi')->count();
       $perbankan_syariah = Absensi::where('jurusan', 'Perbankan-Syariah')->count();

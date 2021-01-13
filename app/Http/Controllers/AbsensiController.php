@@ -21,7 +21,7 @@ class AbsensiController extends Controller
 
 	public function list_absensi()
 	{
-	    $guru = User::all();
+	    $guru = \DB::table('list_absensi')->paginate(10);
 
 	    return view('list_absensi', compact('guru'));
 	}
