@@ -6,7 +6,7 @@
 
     <link rel="icon" type="image/png" href="/img/pbs2.png"/>
     <title>ABSENSI - SMK Islam PB. Soedirman 2</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style_absensi.css">
 </head>
 <body>
 	@yield('content')
