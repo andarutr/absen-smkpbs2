@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin - Download Absen')
+@section('title', 'Download Absen')
 
 @section('content')
 <div class="main-content">

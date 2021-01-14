@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin - Absen')
+@section('title', 'Absen')
 
 @section('content')
 <div class="main-content">

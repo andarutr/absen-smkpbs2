@@ -28,7 +28,7 @@
         <img alt="image" src="/img/admin.png" class="rounded-circle mr-1">
         <div class="d-sm-none d-lg-inline-block">Hi, Guru</div></a>
         <div class="dropdown-menu dropdown-menu-right">
-          <a href="/admin/logout" class="dropdown-item has-icon text-danger">
+          <a href="/guru/logout" class="dropdown-item has-icon text-danger">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </div>
