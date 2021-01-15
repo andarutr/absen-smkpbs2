@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2021 at 04:36 AM
+-- Generation Time: Jan 15, 2021 at 03:37 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -38,6 +38,20 @@ CREATE TABLE `absensi` (
   `foto` varchar(128) NOT NULL,
   `waktu` varchar(128) NOT NULL,
   `deleted_at` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aktivitas`
+--
+
+CREATE TABLE `aktivitas` (
+  `id` int(11) NOT NULL,
+  `id_user` int(3) NOT NULL,
+  `aktivitas` varchar(128) NOT NULL,
+  `icon` varchar(25) NOT NULL,
+  `date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -290,7 +304,8 @@ INSERT INTO `store_absensi` (`id`, `nama`, `username`, `waktu`) VALUES
 (55, 'Admin', 'admin', 'Senin, 9 November 2020 pukul 22.28'),
 (56, 'Admin', 'admin', 'Selasa, 10 November 2020 pukul 22.33'),
 (57, 'Admin', 'admin', 'Rabu, 11 November 2020 pukul 22.18'),
-(58, 'Admin', 'admin', 'Jumat, 13 November 2020 pukul 04.33');
+(58, 'Admin', 'admin', 'Jumat, 13 November 2020 pukul 04.33'),
+(59, 'Admin', 'admin', 'Selasa, 12 Januari 2021 pukul 11.53');
 
 -- --------------------------------------------------------
 
@@ -311,37 +326,37 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `login_date`) VALUES
-(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Senin, 11 Januari 2021 pukul 13.53'),
-(2, 'Dra. Hj. Tati Mulyanih', '060851', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 09.42'),
-(3, 'Dra. Mas Mimin, M.M', '910311', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 12.52'),
-(4, 'Bambang Ismayanto, M.Pd', '030750', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 6 November 2020 pukul 11.35'),
-(5, 'Halimah, S.Pd', '151175', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 10 November 2020 pukul 15.06'),
-(6, 'Indah Hoirunnisah, S.Si', '171293', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Rabu, 11 November 2020 pukul 10.10'),
-(7, 'Rini Permatasari, S.Pd', '171294', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 09.37'),
-(8, 'Ahyar Hailani, S.Sn', '191352', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 12.02'),
-(9, 'Rokhmatunnisa Febrian, S.Pd', '191382', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 09.16'),
-(10, 'Dinar Sarah, S.E', '191386', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Rabu, 11 November 2020 pukul 14.26'),
-(11, 'Rahmawati, S.Pd', '201394', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 08.53'),
-(12, 'Kurnia Wiyanti, S.Pd', '201416', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 10.26'),
-(13, 'Fisi Liana Aziza, S.Pd', '201417', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 08.05'),
-(14, 'Fajar Alkan Joesuli, A.Md', '201419', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 11.26'),
+(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Jumat, 15 Januari 2021 pukul 08.24'),
+(2, 'Dra. Hj. Tati Mulyanih', '060851', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.58'),
+(3, 'Dra. Mas Mimin, M.M', '910311', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 09.16'),
+(4, 'Bambang Ismayanto, M.Pd', '030750', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 5 Januari 2021 pukul 09.27'),
+(5, 'Halimah, S.Pd', '151175', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Senin, 23 November 2020 pukul 06.50'),
+(6, 'Indah Hoirunnisah, S.Si', '171293', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 8 Januari 2021 pukul 08.55'),
+(7, 'Rini Permatasari, S.Pd', '171294', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.22'),
+(8, 'Ahyar Hailani, S.Sn', '191352', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 14 Januari 2021 pukul 10.04'),
+(9, 'Rokhmatunnisa Febrian, S.Pd', '191382', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.55'),
+(10, 'Dinar Sarah, S.E', '191386', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 12 Januari 2021 pukul 10.12'),
+(11, 'Rahmawati, S.Pd', '201394', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 08.02'),
+(12, 'Kurnia Wiyanti, S.Pd', '201416', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.00'),
+(13, 'Fisi Liana Aziza, S.Pd', '201417', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.23'),
+(14, 'Fajar Alkan Joesuli, A.Md', '201419', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 14 Januari 2021 pukul 11.29'),
 (15, 'Dra. Hj. Ikah Atikah, M.M', '870211', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Minggu, 13 September 2020 pukul 19.37'),
-(16, 'Sri Susilaningsih, SE, M.M', '060850', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Senin, 9 November 2020 pukul 15.44'),
+(16, 'Sri Susilaningsih, SE, M.M', '060850', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 08.53'),
 (17, 'Aris Setiawan, S.Pd', '100998', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 22 Oktober 2020 pukul 12.34'),
 (18, 'Sudarsono, S.Pd', '880234', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 3 November 2020 pukul 12.02'),
 (19, 'Dra. Siti Murtasilatun, M.M', '980543', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', '-'),
-(20, 'Dartim, S.Pd', '020725', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 5 November 2020 pukul 08.15'),
+(20, 'Dartim, S.Pd', '020725', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 19 November 2020 pukul 09.36'),
 (21, 'Novi Mardalini, SE', '030751', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 22 Oktober 2020 pukul 10.12'),
-(22, 'Suhari, S.Pd', '080937', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 15 Oktober 2020 pukul 12.48'),
+(22, 'Suhari, S.Pd', '080937', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 5 Januari 2021 pukul 09.56'),
 (23, 'Jebel Firdaus, S.EI', '080947', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 2 Oktober 2020 pukul 10.30'),
-(24, 'Dwi Setyo Rini, S.Pd', '100994', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 11.44'),
+(24, 'Dwi Setyo Rini, S.Pd', '100994', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.05'),
 (25, 'Ana Fitrianingtias, S.Pd', '101002', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Senin, 9 November 2020 pukul 10.00'),
 (26, 'Lulut Andri Iswari, S.Pd', '101004', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 10 November 2020 pukul 15.49'),
-(27, 'Ihsan Mustaqim, S.Pd', '161209', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 12.44'),
-(28, 'Zaenuddin Fahri, S.Pd.I', '161210', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 11.24'),
-(29, 'Faidhatul Atiyah, S.Pd', '201414', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 10.26'),
+(27, 'Ihsan Mustaqim, S.Pd', '161209', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 08.50'),
+(28, 'Zaenuddin Fahri, S.Pd.I', '161210', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 08.49'),
+(29, 'Faidhatul Atiyah, S.Pd', '201414', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 14 Januari 2021 pukul 08.40'),
 (30, 'Vira Awalitawati Siregar, S.Pd', '201415', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', '-'),
-(31, 'Arif Nur Rachman, S.Pd', '201418', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Kamis, 12 November 2020 pukul 10.37');
+(31, 'Arif Nur Rachman, S.Pd', '201418', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.00');
 
 --
 -- Indexes for dumped tables
@@ -351,6 +366,12 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `login_date`) VALUES
 -- Indexes for table `absensi`
 --
 ALTER TABLE `absensi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `aktivitas`
+--
+ALTER TABLE `aktivitas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -400,6 +421,12 @@ ALTER TABLE `absensi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `aktivitas`
+--
+ALTER TABLE `aktivitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
@@ -427,7 +454,7 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `store_absensi`
 --
 ALTER TABLE `store_absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `users`

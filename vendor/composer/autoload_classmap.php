@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Absensi' => $baseDir . '/app/Absensi.php',
+    'App\\Aktivitas' => $baseDir . '/app/Aktivitas.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Exports\\XAkuntansiExport' => $baseDir . '/app/Exports/XAkuntansiExport.php',

@@ -21,7 +21,7 @@ class AbsensiController extends Controller
 
 	public function list_absensi()
 	{
-	    $guru = \DB::table('list_absensi')->simplePaginate(8);
+	    $guru = \DB::table('list_absensi')->orderBy('nama_guru','asc')->simplePaginate(8);
 
 	    return view('list_absensi', compact('guru'));
 	}

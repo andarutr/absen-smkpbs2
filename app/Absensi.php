@@ -10,9 +10,9 @@ class Absensi extends Model
     use SoftDeletes;
 
 	protected $table = 'absensi';
-    protected $fillable = ['nama','kelas','jurusan','guru','nrp','mata_pelajaran','foto','waktu','deleted_at'];
+    protected $guarded = [];
 
-    public $timestamps = false;
+    public $timestamps = FALSE;
     protected $dates = ['deleted_at'];
-    protected $softDelete = true;
+    protected $softDelete = TRUE;
 }

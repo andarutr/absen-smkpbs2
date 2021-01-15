@@ -24,6 +24,7 @@ Route::post('/guru', 'AuthGuruController@postLogin');
 
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/guru'], function(){
+		Route::get('/aktivitas', 'GuruController@aktivitas');
 		Route::get('/dashboard', 'GuruController@dashboard');
 		Route::get('/kelas/{kelas}/{jurusan}/{pelajaran}', 'GuruController@showAbsenPelajaran');
 		Route::get('/cari/{kelas}/{jurusan}/{pelajaran}', 'GuruController@search');

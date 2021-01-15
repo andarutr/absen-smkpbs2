@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\User;
+use Carbon\Carbon;
+use App\Aktivitas;
 use Illuminate\Http\Request;
 
 class AuthGuruController extends Controller
@@ -24,6 +25,13 @@ class AuthGuruController extends Controller
     {
       User::where('username', \Auth::user()->username)->update(['login_date' => Carbon::now()->locale('id')->isoFormat('LLLL')]);
 
+      Aktivitas::create([
+        'id_user' => auth()->user()->id,
+        'aktivitas' => 'Login to the system with NRP '.auth()->user()->username,
+        'icon' => 'fas fa-unlock',
+        'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
+      ]);
+
       return redirect('/guru/dashboard');
     }else{
       return redirect('/login/guru')->with(['message' => 'Username dan password salah!']);
@@ -32,6 +40,13 @@ class AuthGuruController extends Controller
 
   public function logout()
   {
+    Aktivitas::create([
+      'id_user' => auth()->user()->id,
+      'aktivitas' => 'Logout with NRP '.auth()->user()->username,
+      'icon' => 'fas fa-sign-out-alt',
+      'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
+    ]);
+
     \Auth::logout();
     return redirect('/login/guru')->with(['logout' => 'Anda telah logout!']);
   }

@@ -626,6 +626,7 @@ class ComposerStaticInit35ccfa95db8b4a7af1ba9143fe1751f6
 
     public static $classMap = array (
         'App\\Absensi' => __DIR__ . '/../..' . '/app/Absensi.php',
+        'App\\Aktivitas' => __DIR__ . '/../..' . '/app/Aktivitas.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Exports\\XAkuntansiExport' => __DIR__ . '/../..' . '/app/Exports/XAkuntansiExport.php',
