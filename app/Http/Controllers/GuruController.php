@@ -49,7 +49,7 @@ class GuruController extends Controller
       
       Aktivitas::create([
         'id_user' => auth()->user()->id,
-        'aktivitas' => "Mencari Data ".ucwords($kelas)." ".ucwords($jurusan),
+        'aktivitas' => "Mencari Data ".ucwords($kelas)." ".str_replace('-', ' ', ucwords($jurusan)),
         'icon' => 'fas fa-eye',
         'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);

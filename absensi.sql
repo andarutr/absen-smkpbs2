@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2021 at 03:37 AM
+-- Generation Time: Jan 15, 2021 at 05:09 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -232,84 +232,6 @@ INSERT INTO `mata_pelajaran` (`id`, `nrp`, `nama`, `pelajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `store_absensi`
---
-
-CREATE TABLE `store_absensi` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(128) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `waktu` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `store_absensi`
---
-
-INSERT INTO `store_absensi` (`id`, `nama`, `username`, `waktu`) VALUES
-(1, 'Admin', 'admin', 'Selasa, 8 September 2020 pukul 06.42'),
-(2, 'Admin', 'admin', 'Kamis, 10 September 2020 pukul 05.05'),
-(3, 'Admin', 'admin', 'Sabtu, 12 September 2020 pukul 05.06'),
-(4, 'Admin', 'admin', 'Senin, 14 September 2020 pukul 06.04'),
-(5, 'Admin', 'admin', 'Selasa, 15 September 2020 pukul 06.03'),
-(6, 'Admin', 'admin', 'Selasa, 15 September 2020 pukul 11.37'),
-(7, 'Admin', 'admin', 'Rabu, 16 September 2020 pukul 05.20'),
-(8, 'Admin', 'admin', 'Kamis, 17 September 2020 pukul 10.15'),
-(9, 'Admin', 'admin', 'Kamis, 17 September 2020 pukul 10.17'),
-(10, 'Admin', 'admin', 'Jumat, 18 September 2020 pukul 04.43'),
-(11, 'Admin', 'admin', 'Sabtu, 19 September 2020 pukul 04.54'),
-(12, 'Admin', 'admin', 'Minggu, 20 September 2020 pukul 05.35'),
-(13, 'Admin', 'admin', 'Senin, 21 September 2020 pukul 04.53'),
-(14, 'Admin', 'admin', 'Selasa, 22 September 2020 pukul 05.18'),
-(15, 'Admin', 'admin', 'Rabu, 23 September 2020 pukul 05.22'),
-(16, 'Admin', 'admin', 'Rabu, 23 September 2020 pukul 23.24'),
-(17, 'Admin', 'admin', 'Jumat, 25 September 2020 pukul 00.47'),
-(18, 'Admin', 'admin', 'Jumat, 25 September 2020 pukul 23.50'),
-(19, 'Admin', 'admin', 'Senin, 28 September 2020 pukul 22.36'),
-(20, 'Admin', 'admin', 'Selasa, 29 September 2020 pukul 21.59'),
-(21, 'Admin', 'admin', 'Jumat, 2 Oktober 2020 pukul 03.27'),
-(22, 'Admin', 'admin', 'Sabtu, 3 Oktober 2020 pukul 01.24'),
-(23, 'Admin', 'admin', 'Selasa, 6 Oktober 2020 pukul 04.08'),
-(24, 'Admin', 'admin', 'Rabu, 7 Oktober 2020 pukul 00.36'),
-(25, 'Admin', 'admin', 'Kamis, 8 Oktober 2020 pukul 04.29'),
-(26, 'Admin', 'admin', 'Jumat, 9 Oktober 2020 pukul 04.36'),
-(27, 'Admin', 'admin', 'Jumat, 9 Oktober 2020 pukul 13.16'),
-(28, 'Admin', 'admin', 'Sabtu, 10 Oktober 2020 pukul 05.19'),
-(29, 'Admin', 'admin', 'Senin, 12 Oktober 2020 pukul 08.53'),
-(30, 'Admin', 'admin', 'Selasa, 13 Oktober 2020 pukul 07.16'),
-(31, 'Admin', 'admin', 'Rabu, 14 Oktober 2020 pukul 01.07'),
-(32, 'Admin', 'admin', 'Kamis, 15 Oktober 2020 pukul 00.33'),
-(33, 'Admin', 'admin', 'Jumat, 16 Oktober 2020 pukul 06.27'),
-(34, 'Admin', 'admin', 'Jumat, 16 Oktober 2020 pukul 09.13'),
-(35, 'Admin', 'admin', 'Sabtu, 17 Oktober 2020 pukul 09.51'),
-(36, 'Admin', 'admin', 'Selasa, 20 Oktober 2020 pukul 03.44'),
-(37, 'Admin', 'admin', 'Rabu, 21 Oktober 2020 pukul 04.56'),
-(38, 'Admin', 'admin', 'Kamis, 22 Oktober 2020 pukul 03.39'),
-(39, 'Admin', 'admin', 'Kamis, 22 Oktober 2020 pukul 09.34'),
-(40, 'Admin', 'admin', 'Jumat, 23 Oktober 2020 pukul 05.12'),
-(41, 'Admin', 'admin', 'Jumat, 23 Oktober 2020 pukul 22.37'),
-(42, 'Admin', 'admin', 'Sabtu, 24 Oktober 2020 pukul 07.13'),
-(43, 'Admin', 'admin', 'Selasa, 27 Oktober 2020 pukul 00.00'),
-(44, 'Admin', 'admin', 'Rabu, 28 Oktober 2020 pukul 04.15'),
-(45, 'Admin', 'admin', 'Rabu, 28 Oktober 2020 pukul 04.15'),
-(46, 'Admin', 'admin', 'Rabu, 28 Oktober 2020 pukul 04.15'),
-(47, 'Admin', 'admin', 'Rabu, 28 Oktober 2020 pukul 04.16'),
-(48, 'Admin', 'admin', 'Rabu, 28 Oktober 2020 pukul 04.16'),
-(49, 'Admin', 'admin', 'Jumat, 30 Oktober 2020 pukul 05.31'),
-(50, 'Admin', 'admin', 'Senin, 2 November 2020 pukul 23.36'),
-(51, 'Admin', 'admin', 'Selasa, 3 November 2020 pukul 23.10'),
-(52, 'Admin', 'admin', 'Kamis, 5 November 2020 pukul 04.20'),
-(53, 'Admin', 'admin', 'Jumat, 6 November 2020 pukul 04.45'),
-(54, 'Admin', 'admin', 'Sabtu, 7 November 2020 pukul 04.29'),
-(55, 'Admin', 'admin', 'Senin, 9 November 2020 pukul 22.28'),
-(56, 'Admin', 'admin', 'Selasa, 10 November 2020 pukul 22.33'),
-(57, 'Admin', 'admin', 'Rabu, 11 November 2020 pukul 22.18'),
-(58, 'Admin', 'admin', 'Jumat, 13 November 2020 pukul 04.33'),
-(59, 'Admin', 'admin', 'Selasa, 12 Januari 2021 pukul 11.53');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -326,8 +248,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `login_date`) VALUES
-(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Jumat, 15 Januari 2021 pukul 08.24'),
-(2, 'Dra. Hj. Tati Mulyanih', '060851', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 07.58'),
+(1, 'Admin', 'admin', '$2y$12$LTSN.vQtvekjAZPpKHwWHe7h39QCa17WYe6hMvepH3i71/piCPHqO', 'Jumat, 15 Januari 2021 pukul 10.13'),
+(2, 'Dra. Hj. Tati Mulyanih', '060851', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 10.12'),
 (3, 'Dra. Mas Mimin, M.M', '910311', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Jumat, 15 Januari 2021 pukul 09.16'),
 (4, 'Bambang Ismayanto, M.Pd', '030750', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Selasa, 5 Januari 2021 pukul 09.27'),
 (5, 'Halimah, S.Pd', '151175', '$2y$12$duGMi5oJRy6iC448dtNBSu6YMaSR8mbz8LxTwBSXjvXndIym3UTQq', 'Senin, 23 November 2020 pukul 06.50'),
@@ -399,12 +321,6 @@ ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `store_absensi`
---
-ALTER TABLE `store_absensi`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -449,12 +365,6 @@ ALTER TABLE `list_absensi`
 --
 ALTER TABLE `mata_pelajaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
-
---
--- AUTO_INCREMENT for table `store_absensi`
---
-ALTER TABLE `store_absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `users`

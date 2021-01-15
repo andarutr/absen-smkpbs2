@@ -54,6 +54,11 @@
             <img alt="image" src="/img/admin.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, Admin</div></a>
             <div class="dropdown-menu dropdown-menu-right">
+              <div class="dropdown-title">Selamat Datang</div>
+              <div class="dropdown-divider"></div>
+              <a href="/admin/aktivitas" class="dropdown-item has-icon">
+                <i class="fas fa-bolt"></i> Aktivitas
+              </a>
               <a href="/admin/logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>

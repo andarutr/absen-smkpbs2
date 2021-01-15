@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function(){
 
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/admin'], function(){
+		Route::get('/aktivitas', 'AdminController@aktivitas');
 		Route::get('/dashboard', 'AdminController@dashboard');
 		Route::get('/store-data', 'AdminController@storeData');
 		Route::get('/data-guru', 'AdminController@data_guru');

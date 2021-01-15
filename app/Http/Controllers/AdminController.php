@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use PDF;
-use Carbon\Carbon;
 use App\User;
 use App\Absensi;
+use Carbon\Carbon;
+use App\Aktivitas;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+  public function aktivitas()
+  {
+      $menu = 'Aktivitas';
+      $aktivitas = Aktivitas::simplePaginate(10);
+
+      return view('admin.aktivitas', compact('menu','aktivitas'));
+  }
+
   public function dashboard()
   {
       $menu = 'Dashboard';
@@ -35,10 +44,12 @@ class AdminController extends Controller
   public function storeData()
   {
       \DB::table('absensi')->update(array('deleted_at' => 1));
-      \DB::table('store_absensi')->insert([
-          'nama'      => \Auth::user()->name,
-          'username'  => \Auth::user()->username,
-          'waktu'     => Carbon::now()->locale('id')->isoFormat('LLLL')
+
+      Aktivitas::create([
+        'id_user' => auth()->user()->id,
+        'aktivitas' => "ADMIN Stored Data!",
+        'icon' => 'fas fa-save',
+        'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);
 
       return redirect('/admin/dashboard');
@@ -60,6 +71,13 @@ class AdminController extends Controller
       $kelas = $kelas;
       $jurusan = $jurusan;
       $cari = $request->cari;
+      
+      Aktivitas::create([
+        'id_user' => auth()->user()->id,
+        'aktivitas' => "Mencari Data ".ucwords($kelas)." ".str_replace('-', ' ', ucwords($jurusan)),
+        'icon' => 'fas fa-eye',
+        'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
+      ]);
 
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan])
                             ->where('nama','like',"%".$cari."%")
@@ -79,6 +97,13 @@ class AdminController extends Controller
       $kelas = $kelas;
       $jurusan = $jurusan;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan])->get();
+      
+      Aktivitas::create([
+        'id_user' => auth()->user()->id,
+        'aktivitas' => "Preview Data ".ucwords($kelas)." ".str_replace('-', ' ', ucwords($jurusan)),
+        'icon' => 'fas fa-eye',
+        'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
+      ]);
 
       return view('admin.preview', compact('absensi','kelas','jurusan'));
   }
