@@ -18,7 +18,7 @@
             <img src="/img/e_absen.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ $gr->nama_guru }}</h5><br>
-              <a href="{{ url($gr->link) }}" class="btn btn-primary">Absen</a>
+              <a href="{{ url('/absensi/'.$gr->link) }}" class="btn btn-primary">Absen</a>
             </div>
           </div>
         </div>

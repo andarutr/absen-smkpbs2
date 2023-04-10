@@ -13,10 +13,7 @@ class AbsensiController extends Controller
 {
 	public function index($username)
 	{
-	    $matpel = MataPelajaran::where('nrp', $username)->get();
-	    $username = User::where('username', $username)->first();
-
-	    return view('pages.absensi', compact('username','matpel'));
+	    return view('pages.absensi', compact('username'));
 	}
 
 	public function list_absensi()
@@ -41,7 +38,7 @@ class AbsensiController extends Controller
 
 	      if($absensi > 0)
 	      {
-	          return redirect("/$username->username")->with(['failed' => 'Anda sudah absen hari ini!']);
+	          return redirect("/absensi/$username->username")->withWarning('Anda sudah absen hari ini!');
 	      }else{
 	          $file = $request->file('foto');
 	          $img = Image::make($file)->fit(250);
@@ -58,7 +55,7 @@ class AbsensiController extends Controller
 	            'waktu'           => Carbon::now()->locale('id')->isoFormat('LLLL')
 	          ]);
 
-	          return redirect("/$username->username")->with(['message' => 'Terimakasih telah hadir hari ini!']);
+	          return redirect("/absensi/$username->username")->withSuccess('Terimakasih telah hadir hari ini!');
 	    }
 	}
 }
