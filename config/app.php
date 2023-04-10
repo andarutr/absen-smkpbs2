@@ -166,7 +166,6 @@ return [
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
-        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
