@@ -15,7 +15,7 @@ class DownloadController extends Controller
       $menu = 'Download';
       $waktu = Carbon::now()->locale('id')->isoFormat('LL');
 
-      return view('admin.download', compact('menu','waktu'));
+      return view('pages.admin.download', compact('menu','waktu'));
   }
 
   public function XAnimasi()

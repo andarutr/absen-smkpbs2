@@ -16,14 +16,14 @@ class AbsensiController extends Controller
 	    $matpel = MataPelajaran::where('nrp', $username)->get();
 	    $username = User::where('username', $username)->first();
 
-	    return view('absensi', compact('username','matpel'));
+	    return view('pages.absensi', compact('username','matpel'));
 	}
 
 	public function list_absensi()
 	{
 	    $guru = \DB::table('list_absensi')->orderBy('nama_guru','asc')->simplePaginate(8);
 
-	    return view('list_absensi', compact('guru'));
+	    return view('pages.list_absensi', compact('guru'));
 	}
 
 	public function absensi(Request $request, $username)

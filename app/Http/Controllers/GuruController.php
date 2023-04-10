@@ -15,7 +15,7 @@ class GuruController extends Controller
       $aktivitas = Aktivitas::where('id_user', auth()->user()->id)
                             ->simplePaginate(10);
 
-      return view('guru.aktivitas', compact('menu','aktivitas'));
+      return view('pages.guru.aktivitas', compact('menu','aktivitas'));
   }
 
   public function dashboard()
@@ -25,7 +25,7 @@ class GuruController extends Controller
                             ->orderBy('id','desc')
                             ->paginate(25);
 
-      return view('guru.dashboard', compact('menu','absensi'));
+      return view('pages.guru.dashboard', compact('menu','absensi'));
   }
 
   public function showAbsenPelajaran($kelas, $jurusan, $pelajaran)
@@ -36,7 +36,7 @@ class GuruController extends Controller
       $pelajaran = $pelajaran;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan,'mata_pelajaran' => $pelajaran, 'guru' => \Auth::user()->name])->paginate(25);
 
-      return view('guru.absen_pelajaran', compact('menu','absensi','kelas','jurusan','pelajaran'));
+      return view('pages.guru.absen_pelajaran', compact('menu','absensi','kelas','jurusan','pelajaran'));
   }
 
   public function search(Request $request, $kelas, $jurusan, $pelajaran)
@@ -63,7 +63,7 @@ class GuruController extends Controller
                             ->orWhere('waktu','like',"%".$cari."%")
                             ->paginate(25);
 
-      return view('guru.absen_pelajaran', compact('menu','absensi','kelas','jurusan','pelajaran'));
+      return view('pages.guru.absen_pelajaran', compact('menu','absensi','kelas','jurusan','pelajaran'));
   }
 
   public function waliKelas($kelas, $jurusan)
@@ -73,7 +73,7 @@ class GuruController extends Controller
       $jurusan = $jurusan;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan, 'guru' => \Auth::user()->name, 'mata_pelajaran' => 'Wali Kelas'])->paginate(25);
 
-      return view('guru.absen', compact('menu','absensi','kelas','jurusan'));
+      return view('pages.guru.absen', compact('menu','absensi','kelas','jurusan'));
   }
 
   public function searchAbsenKelas(Request $request, $kelas, $jurusan)
@@ -100,7 +100,7 @@ class GuruController extends Controller
                           ->withTrashed()
                           ->paginate(25);
 
-      return view('guru.absen', compact('menu','absensi','kelas','jurusan'));
+      return view('pages.guru.absen', compact('menu','absensi','kelas','jurusan'));
   }
 
   public function previewAbsenWalas($kelas, $jurusan)
@@ -116,7 +116,7 @@ class GuruController extends Controller
         'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);
 
-      return view('guru.preview_walas', compact('absensi','kelas','jurusan'));
+      return view('pages.guru.preview_walas', compact('absensi','kelas','jurusan'));
   }
 
   public function previewAbsen($kelas, $jurusan, $pelajaran)
@@ -133,7 +133,7 @@ class GuruController extends Controller
         'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);
 
-      return view('guru.preview', compact('absensi','kelas','jurusan','pelajaran'));
+      return view('pages.guru.preview', compact('absensi','kelas','jurusan','pelajaran'));
   }
 
   public function downloadDataAbsenWalas($kelas, $jurusan)
@@ -141,7 +141,7 @@ class GuruController extends Controller
       $kelas = $kelas;
       $jurusan = $jurusan;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan, 'guru' => \Auth::user()->name, 'mata_pelajaran' => 'Wali Kelas'])->get();
-      $download = \PDF::loadview('absen.datapdf_admin', compact('kelas','jurusan','absensi'));
+      $download = \PDF::loadview('pages.absen.datapdf_admin', compact('kelas','jurusan','absensi'));
 
       Aktivitas::create([
         'id_user' => auth()->user()->id,
@@ -159,7 +159,7 @@ class GuruController extends Controller
       $jurusan = $jurusan;
       $pelajaran = $pelajaran;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan, 'mata_pelajaran' => $pelajaran, 'guru' => \Auth::user()->name])->get();
-      $download = \PDF::loadview('absen.datapdf', compact('kelas','jurusan','pelajaran','absensi'));
+      $download = \PDF::loadview('pages.absen.datapdf', compact('kelas','jurusan','pelajaran','absensi'));
       
       Aktivitas::create([
         'id_user' => auth()->user()->id,

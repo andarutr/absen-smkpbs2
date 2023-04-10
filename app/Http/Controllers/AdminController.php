@@ -16,7 +16,7 @@ class AdminController extends Controller
       $menu = 'Aktivitas';
       $aktivitas = Aktivitas::simplePaginate(10);
 
-      return view('admin.aktivitas', compact('menu','aktivitas'));
+      return view('pages.admin.aktivitas', compact('menu','aktivitas'));
   }
 
   public function dashboard()
@@ -30,7 +30,7 @@ class AdminController extends Controller
       $ap2 = Absensi::where('jurusan', 'otkp-2')->count();
       $administrasi_perkantoran = $ap1 + $ap2;
 
-      return view('admin.dashboard', compact('menu','absensi','animasi','akuntansi','perbankan_syariah','administrasi_perkantoran'));
+      return view('pages.admin.dashboard', compact('menu','absensi','animasi','akuntansi','perbankan_syariah','administrasi_perkantoran'));
   }
 
   public function data_guru()
@@ -38,7 +38,7 @@ class AdminController extends Controller
       $menu = 'Data Guru';
       $guru = User::paginate(10);
 
-      return view('admin.data_guru', compact('menu','guru'));
+      return view('pages.admin.data_guru', compact('menu','guru'));
   }
 
   public function storeData()
@@ -62,7 +62,7 @@ class AdminController extends Controller
       $jurusan = $jurusan;
       $absensi = Absensi::where(['kelas' => $kelas, 'jurusan' => $jurusan])->withTrashed()->paginate(25);
 
-      return view('admin.absen', compact('menu','absensi','kelas','jurusan'));
+      return view('pages.admin.absen', compact('menu','absensi','kelas','jurusan'));
   }
 
   public function search(Request $request, $kelas, $jurusan)
@@ -89,7 +89,7 @@ class AdminController extends Controller
                             ->withTrashed()
                             ->paginate(25);
 
-      return view('admin.absen', compact('menu','absensi','kelas','jurusan'));
+      return view('pages.admin.absen', compact('menu','absensi','kelas','jurusan'));
   }
 
   public function previewAbsen($kelas, $jurusan)
@@ -105,6 +105,6 @@ class AdminController extends Controller
         'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);
 
-      return view('admin.preview', compact('absensi','kelas','jurusan'));
+      return view('pages.admin.preview', compact('absensi','kelas','jurusan'));
   }
 }

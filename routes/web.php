@@ -21,6 +21,7 @@ use App\Http\Controllers\DownloadController;
 
 Route::get('/', [AbsensiController::class, 'list_absensi']);
 Route::get('/list-absensi', [AbsensiController::class, 'list_absensi']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/login/admin', [AuthController::class, 'login'])->name('login');
 Route::post('/admin', [AuthController::class, 'postLogin']);
 Route::get('/login/guru', [AuthGuruController::class, 'login']);
