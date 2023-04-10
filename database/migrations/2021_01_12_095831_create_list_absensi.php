@@ -14,7 +14,7 @@ class CreateListAbsensi extends Migration
     public function up()
     {
         Schema::create('list_absensi', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nama_guru', 50);
             $table->string('nrp', 6);
             $table->string('link', 6);

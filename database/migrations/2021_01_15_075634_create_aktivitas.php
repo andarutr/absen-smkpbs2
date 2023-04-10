@@ -14,7 +14,7 @@ class CreateAktivitas extends Migration
     public function up()
     {
         Schema::create('aktivitas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->tinyInteger('id_user');
             $table->string('aktivitas', 128);
             $table->string('icon', 25);

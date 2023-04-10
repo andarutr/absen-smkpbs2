@@ -15,7 +15,7 @@ class Kelas extends Migration
     {
         Schema::create('kelas', function(Blueprint $table){
             $table->increments('id');
-            $table->string('kelas', 3);
+            $table->string('kelas', 25);
         });
     }
 

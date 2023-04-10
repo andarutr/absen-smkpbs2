@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "id_user": "1",
+        "aktivitas": "ADMIN Login to the system",
+        "icon": "fas fa-unlock",
+        "date": "Minggu, 9 April 2023 pukul 22.04"
+    },
+    {
+        "id": "2",
+        "id_user": "1",
+        "aktivitas": "ADMIN Logout",
+        "icon": "fas fa-sign-out-alt",
+        "date": "Minggu, 9 April 2023 pukul 22.09"
+    },
+    {
+        "id": "3",
+        "id_user": "2",
+        "aktivitas": "Login to the system with NRP 060851",
+        "icon": "fas fa-unlock",
+        "date": "Minggu, 9 April 2023 pukul 22.10"
+    },
+    {
+        "id": "4",
+        "id_user": "1",
+        "aktivitas": "ADMIN Login to the system",
+        "icon": "fas fa-unlock",
+        "date": "Minggu, 9 April 2023 pukul 22.12"
+    },
+    {
+        "id": "5",
+        "id_user": "1",
+        "aktivitas": "ADMIN Stored Data!",
+        "icon": "fas fa-save",
+        "date": "Minggu, 9 April 2023 pukul 22.13"
+    }
+]
