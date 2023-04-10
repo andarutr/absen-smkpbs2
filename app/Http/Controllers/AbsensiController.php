@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Image;
 use Carbon\Carbon;
-use App\User;
-use App\Absensi;
+use App\Models\User;
+use App\Models\Absensi;
 use Illuminate\Http\Request;
-use App\MataPelajaran;
+use App\Models\MataPelajaran;
 
 class AbsensiController extends Controller
 {

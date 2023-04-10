@@ -59,7 +59,7 @@
               <a href="/admin/aktivitas" class="dropdown-item has-icon">
                 <i class="fas fa-bolt"></i> Aktivitas
               </a>
-              <a href="/admin/logout" class="dropdown-item has-icon text-danger">
+              <a href="/logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Absensi;
-use App\Aktivitas;
+use App\Models\Absensi;
+use App\Models\Aktivitas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 

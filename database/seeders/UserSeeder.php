@@ -20,9 +20,11 @@ class UserSeeder extends Seeder
 
         foreach($users as $user){
             User::create([
+                'id' => $user->id,
                 'name' => $user->name,
                 'username' => $user->username,
                 'password' => $user->password,
+                'id_role' => $user->id_role,
                 'login_date' => $user->login_date,
             ]);
         }

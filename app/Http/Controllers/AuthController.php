@@ -2,52 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Carbon\Carbon;
-use App\Aktivitas;
+use App\Models\User;
+use App\Models\Aktivitas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-  public function login()
+  public function index()
   {
     return view('pages.auth.login');
   }
 
-  public function postLogin(Request $request)
+  public function store(Request $request)
   {
     $this->validate($request, [
       'username' => 'required',
       'password' => 'required'
     ]);
 
-    if(auth()->attempt(['username' => $request->username, 'password' => $request->password]))
+    $admin = auth()
+                ->attempt([
+                  'username' => $request->username, 
+                  'password' => $request->password,
+                  'id_role' => 1
+                ]);
+    if(auth()->attempt(['username' => $request->username,'password' => $request->password]))
     {
       User::where('username', \Auth::user()->username)->update(['login_date' => Carbon::now()->locale('id')->isoFormat('LLLL')]);
       
       Aktivitas::create([
         'id_user' => auth()->user()->id,
-        'aktivitas' => 'ADMIN Login to the system',
+        'aktivitas' => auth()->user()->name.' Login to the system',
         'icon' => 'fas fa-unlock',
         'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
       ]);
-
-      return redirect('/admin/dashboard');
+      if(Auth::user()->id_role === 1){
+        return redirect('/admin/dashboard')->withSuccess('Selamat Datang!');
+      }else{
+        return redirect('/guru/dashboard')->withSuccess('Selamat Datang!');
+      }
     }else{
-      return redirect('/login/admin')->with(['message' => 'Username dan password salah!']);
+      return redirect('/login')->withWarning('Username dan password salah!');
     }
   }
 
-  public function logout()
+  public function destroy()
   {
     Aktivitas::create([
       'id_user' => auth()->user()->id,
-      'aktivitas' => 'ADMIN Logout',
+      'aktivitas' => auth()->user()->name.' Logout',
       'icon' => 'fas fa-sign-out-alt',
       'date' => Carbon::now()->locale('id')->isoFormat('LLLL')
     ]);
     
-      \Auth::logout();
-      return redirect('/login/admin')->with(['logout' => 'Anda telah logout!']);
+    \Auth::logout();
+    return redirect('/login')->withSuccess('Anda telah logout!');
   }
 }

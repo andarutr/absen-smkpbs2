@@ -6,24 +6,6 @@
       </ul>
     </form>
     <ul class="navbar-nav navbar-right">
-      <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-        <div class="dropdown-menu dropdown-list dropdown-menu-right">
-          <div class="dropdown-header">Pesan</div>
-          <div class="dropdown-list-content dropdown-list-message">
-            <a href="javascript:;" class="dropdown-item dropdown-item-unread">
-              <div class="dropdown-item-avatar">
-                <img alt="image" src="/img/andarutr.jpg" class="rounded-circle">
-                <div class="is-online"></div>
-              </div>
-              <div class="dropdown-item-desc">
-                <b>Andaru</b>
-                <p>Selamat datang di panel guru. Silahkan hubungi saya lebih lanjut, jika mengalami kendala.</p>
-                <div class="time">{{ date('d F Y') }}</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </li>
       <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
         <div class="dropdown-menu dropdown-list dropdown-menu-right">
           <div class="dropdown-header">Pemberitahuan
@@ -38,15 +20,6 @@
                 <div class="time">{{ date('d F Y') }}</div>
               </div>
             </a>
-            <a href="#" class="dropdown-item dropdown-item-unread">
-              <div class="dropdown-item-icon bg-success text-white">
-                <i class="fas fa-check"></i>
-              </div>
-              <div class="dropdown-item-desc">
-                Sistem Panel Guru Updated!
-                <div class="time text-primary">12 January 2021</div>
-              </div>
-            </a>
           </div>
         </div>
       </li>
@@ -59,7 +32,7 @@
           <a href="/guru/aktivitas" class="dropdown-item has-icon">
             <i class="fas fa-bolt"></i> Aktivitas
           </a>
-          <a href="/guru/logout" class="dropdown-item has-icon text-danger">
+          <a href="/logout" class="dropdown-item has-icon text-danger">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </div>

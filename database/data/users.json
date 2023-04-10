@@ -1,188 +1,250 @@
 [
     {
+        "id": "1",
         "name": "Admin",
         "username": "admin",
         "password": "$2a$12$NSd6HS.feLucqJOyqOySqO1gKHGGQDoMx3mxFAFLOJAqaJBjLmdAi",
+        "id_role": "1",
         "login_date": "Minggu, 9 April 2023 pukul 22.12"
     },
     {
+        "id": "2",
         "name": "Dra. Hj. Tati Mulyanih",
         "username": "060851",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Minggu, 9 April 2023 pukul 22.10"
     },
     {
+        "id": "3",
         "name": "Dra. Mas Mimin, M.M",
         "username": "910311",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 09.16"
     },
     {
+        "id": "4",
         "name": "Bambang Ismayanto, M.Pd",
         "username": "030750",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Selasa, 5 Januari 2021 pukul 09.27"
     },
     {
+        "id": "5",
         "name": "Halimah, S.Pd",
         "username": "151175",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Senin, 23 November 2020 pukul 06.50"
     },
     {
+        "id": "6",
         "name": "Indah Hoirunnisah, S.Si",
         "username": "171293",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 8 Januari 2021 pukul 08.55"
     },
     {
+        "id": "7",
         "name": "Rini Permatasari, S.Pd",
         "username": "171294",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.22"
     },
     {
+        "id": "8",
         "name": "Ahyar Hailani, S.Sn",
         "username": "191352",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 14 Januari 2021 pukul 10.04"
     },
     {
+        "id": "9",
         "name": "Rokhmatunnisa Febrian, S.Pd",
         "username": "191382",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.55"
     },
     {
+        "id": "10",
         "name": "Dinar Sarah, S.E",
         "username": "191386",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Selasa, 12 Januari 2021 pukul 10.12"
     },
     {
+        "id": "11",
         "name": "Rahmawati, S.Pd",
         "username": "201394",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 08.02"
     },
     {
+        "id": "12",
         "name": "Kurnia Wiyanti, S.Pd",
         "username": "201416",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.00"
     },
     {
+        "id": "13",
         "name": "Fisi Liana Aziza, S.Pd",
         "username": "201417",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.23"
     },
     {
+        "id": "14",
         "name": "Fajar Alkan Joesuli, A.Md",
         "username": "201419",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 14 Januari 2021 pukul 11.29"
     },
     {
+        "id": "15",
         "name": "Dra. Hj. Ikah Atikah, M.M",
         "username": "870211",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Minggu, 13 September 2020 pukul 19.37"
     },
     {
+        "id": "16",
         "name": "Sri Susilaningsih, SE, M.M",
         "username": "060850",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 08.53"
     },
     {
+        "id": "17",
         "name": "Aris Setiawan, S.Pd",
         "username": "100998",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 22 Oktober 2020 pukul 12.34"
     },
     {
+        "id": "18",
         "name": "Sudarsono, S.Pd",
         "username": "880234",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Selasa, 3 November 2020 pukul 12.02"
     },
     {
+        "id": "19",
         "name": "Dra. Siti Murtasilatun, M.M",
         "username": "980543",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "-"
     },
     {
+        "id": "20",
         "name": "Dartim, S.Pd",
         "username": "020725",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 19 November 2020 pukul 09.36"
     },
     {
+        "id": "21",
         "name": "Novi Mardalini, SE",
         "username": "030751",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 22 Oktober 2020 pukul 10.12"
     },
     {
+        "id": "22",
         "name": "Suhari, S.Pd",
         "username": "080937",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Selasa, 5 Januari 2021 pukul 09.56"
     },
     {
+        "id": "23",
         "name": "Jebel Firdaus, S.EI",
         "username": "080947",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 2 Oktober 2020 pukul 10.30"
     },
     {
+        "id": "24",
         "name": "Dwi Setyo Rini, S.Pd",
         "username": "100994",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.05"
     },
     {
+        "id": "25",
         "name": "Ana Fitrianingtias, S.Pd",
         "username": "101002",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Senin, 9 November 2020 pukul 10.00"
     },
     {
+        "id": "26",
         "name": "Lulut Andri Iswari, S.Pd",
         "username": "101004",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Selasa, 10 November 2020 pukul 15.49"
     },
     {
+        "id": "27",
         "name": "Ihsan Mustaqim, S.Pd",
         "username": "161209",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 08.50"
     },
     {
+        "id": "28",
         "name": "Zaenuddin Fahri, S.Pd.I",
         "username": "161210",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 08.49"
     },
     {
+        "id": "29",
         "name": "Faidhatul Atiyah, S.Pd",
         "username": "201414",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Kamis, 14 Januari 2021 pukul 08.40"
     },
     {
+        "id": "30",
         "name": "Vira Awalitawati Siregar, S.Pd",
         "username": "201415",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "-"
     },
     {
+        "id": "31",
         "name": "Arif Nur Rachman, S.Pd",
         "username": "201418",
         "password": "$2a$12$97.MUKzldemv6FNJ767K7Oxis8ihBk45n6NywxWEQIiLqcvoAk0vK",
+        "id_role": "2",
         "login_date": "Jumat, 15 Januari 2021 pukul 07.00"
     }
 ]

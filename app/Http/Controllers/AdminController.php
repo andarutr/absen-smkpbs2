@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use PDF;
-use App\User;
-use App\Absensi;
+use App\Models\User;
+use App\Models\Absensi;
 use Carbon\Carbon;
-use App\Aktivitas;
+use App\Models\Aktivitas;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
