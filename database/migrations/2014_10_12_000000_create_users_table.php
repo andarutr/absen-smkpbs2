@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 128);
             $table->string('username', 10);
             $table->string('password', 225);
+            $table->integer('id_role');
             $table->string('login_date', 50)->nullable();
         });
     }
