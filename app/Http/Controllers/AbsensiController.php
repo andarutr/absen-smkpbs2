@@ -18,9 +18,20 @@ class AbsensiController extends Controller
 
 	public function list_absensi()
 	{
-	    $guru = \DB::table('list_absensi')->orderBy('nama_guru','asc')->simplePaginate(8);
+		$search = request('search');
 
-	    return view('pages.list_absensi', compact('guru'));
+		$query = \DB::table('list_absensi')->orderBy('nama_guru', 'asc');
+
+		if ($search) {
+			$query->where('nama_guru', 'LIKE', "%{$search}%")
+			->orWhere('nrp', 'LIKE', "%{$search}%");
+		}
+
+		$guru = $query->simplePaginate(8);
+		$guru->withPath('');
+		$guru->appends(request()->query()); 
+
+		return view('pages.list_absensi', compact('guru'));
 	}
 
 	public function absensi(Request $request, $username)

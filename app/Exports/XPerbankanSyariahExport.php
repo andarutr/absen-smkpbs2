@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Absensi;
+use App\Models\Absensi;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 

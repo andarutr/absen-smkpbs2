@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DownloadController;
 
 Route::middleware('auth')->group(function(){
 	Route::group(['prefix' => '/admin'], function(){
