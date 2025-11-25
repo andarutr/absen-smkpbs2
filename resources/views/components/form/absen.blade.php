@@ -1,3 +1,5 @@
+<br>
+<small>Ibu/Bapak. {{ $username->name }}</small>
 <form action="/absensi/{{ $username->username }}" method="POST" enctype="multipart/form-data">
 @csrf
     <input type="text" name="nama" class="form-content" placeholder="Nama Lengkap" value="{{ old('nama') }}">

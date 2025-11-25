@@ -41,8 +41,9 @@ class AbsensiController extends Controller
 	          return redirect("/absensi/$username->username")->withWarning('Anda sudah absen hari ini!');
 	      }else{
 	          $file = $request->file('foto');
-	          $img = Image::make($file)->fit(250);
-	          $img->save("img/absensi/$request->jurusan/$request->kelas/".str_replace(' ', '_', $request->nama).$request->kelas.$request->jurusan.$request->mata_pelajaran.date('m.d.y').".jpg");
+	        //   $img = Image::make($file)->fit(250);
+			  $file->move("img/absensi/$request->jurusan/$request->kelas", str_replace(' ', '_', $request->nama).$request->kelas.$request->jurusan.$request->mata_pelajaran.date('m.d.y').".jpg");
+	        //   $img->save("img/absensi/$request->jurusan/$request->kelas/".str_replace(' ', '_', $request->nama).$request->kelas.$request->jurusan.$request->mata_pelajaran.date('m.d.y').".jpg");
 
 	          Absensi::create([
 	            'nama'            => $request->nama,
