@@ -12,6 +12,6 @@ class XPerbankanSyariahExport implements FromView
     {
     	$absensi = Absensi::where(['kelas' => 'X', 'jurusan' => 'Perbankan-Syariah'])->get();
     	
-        return view('admin.absensi_excel', compact('absensi'));
+        return view('pages.admin.absensi_excel', compact('absensi'));
     }
 }

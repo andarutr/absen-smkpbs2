@@ -12,6 +12,6 @@ class XIIAkuntansiExport implements FromView
     {
     	$absensi = Absensi::where(['kelas' => 'XII', 'jurusan' => 'Akuntansi'])->get();
     	
-        return view('admin.absensi_excel', compact('absensi'));
+        return view('pages.admin.absensi_excel', compact('absensi'));
     }
 }

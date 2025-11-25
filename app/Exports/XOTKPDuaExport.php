@@ -12,6 +12,6 @@ class XOTKPDuaExport implements FromView
     {
     	$absensi = Absensi::where(['kelas' => 'X', 'jurusan' => 'OTKP-2'])->get();
     	
-        return view('admin.absensi_excel', compact('absensi'));
+        return view('pages.admin.absensi_excel', compact('absensi'));
     }
 }
